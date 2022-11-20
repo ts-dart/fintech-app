@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt';
 async function create(username:string, password:string):Promise<TyResponse> {
     const data = await users.findOne({ where: { username } });
     if (data !== null) {
-        return { message: 'username already registered', code: 400 };
+        return { message: 'Username already registered', code: 400 };
     };
 
     const accountCreated = await accounts.create({ balance: '100.00' });
@@ -16,7 +16,7 @@ async function create(username:string, password:string):Promise<TyResponse> {
         accountId: accountCreated.id,
     });
 
-    return { message: 'successfully registered user', code: 201 };
+    return { message: 'Successfully registered user', code: 201 };
 }
 
 export default {

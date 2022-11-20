@@ -14,8 +14,8 @@ async function getAllTransactions(data_user:TyDataUser, date:any) {
         ...await transactions.findAll({ where: { debited_account_id: accountId } }),
         ...await transactions.findAll({ where: { credited_account_id: accountId } })
     ]
-
-    if (date !== undefined) return await filterByDate(transactionsList as any, date);
+    
+    if (date.match('(?=.*[0-9])[0-9a-zA-Z$*&@#]')) return await filterByDate(transactionsList as any, date);
     return { message: transactionsList, code: 200 };
 }
 
@@ -28,13 +28,13 @@ async function getTransactionsByType(data_user:TyDataUser, by:string, date:any) 
             ...await transactions.findAll({ where: { credited_account_id: accountId } })
         );
 
-        if (date !== undefined) return await filterByDate(transactionsList as any, date);
+        if (date.match('(?=.*[0-9])[0-9a-zA-Z$*&@#]')) return await filterByDate(transactionsList as any, date);
     } else if (by === 'cash-in') {
         transactionsList.push(
             ...await transactions.findAll({ where: { debited_account_id: accountId } })
         );
 
-        if (date !== undefined) return await filterByDate(transactionsList as any, date);
+        if (date.match('(?=.*[0-9])[0-9a-zA-Z$*&@#]')) return await filterByDate(transactionsList as any, date);
     }
 
     return { message: transactionsList, code: 200 };

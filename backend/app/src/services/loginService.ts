@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 
 async function read(username:string, password:string):Promise<TyResponse> {
     const userAccount = await users.findOne({ where: { username } });
-    if (userAccount === null) return { message: 'User not found', code: 404 };
+    if (userAccount === null) return { message: 'Username not registered', code: 404 };
 
     const { password:pass } = userAccount?.dataValues;
     const descriptPassword = await bcrypt.compare(password, pass);
