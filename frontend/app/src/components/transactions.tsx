@@ -22,11 +22,6 @@ export default function Transactions() {
         return formated;
     };
 
-    const clearFilter = () => {
-        setType('todas');
-        setDate(undefined);
-    };
-
     useEffect(() => {
         fetch(`http://localhost:3000/transactions?date=${date}&by=${type}`, {
             mode: 'cors',
@@ -39,24 +34,26 @@ export default function Transactions() {
     return(
         <div>
             <div>
-                <select
-                    data-testid="comparison-filter"
-                    id="comparation"
-                    onChange={({ target }) => setType(target.value as any)}
-                >
-                    <option>todas</option>
-                    <option>cash-in</option>
-                    <option>cash-out</option>
-                </select>
-                <input
-                    type='date'
-                    onChange={({ target }) => setDate(formatDate(target.value) as any)}
-                />
-                <input
-                    type='button'
-                    value='Limpar filtros'
-                    onClick={()=>clearFilter()}
-                />
+                <label htmlFor='selectType'>
+                    Selecione o tipo de tansação:
+                    <select
+                        data-testid="comparison-filter"
+                        id="selectType"
+                        onChange={({ target }) => setType(target.value as any)}
+                    >
+                        <option id='sel'>todas</option>
+                        <option>cash-in</option>
+                        <option>cash-out</option>
+                    </select>
+                </label>
+                <label htmlFor='inputDate'>
+                    Selecione uma data:
+                    <input
+                        type='date'
+                        id='inputDate'
+                        onChange={({ target }) => setDate(formatDate(target.value) as any)}
+                    />
+                </label>
             </div>
             {
                 transactions && transactions.every((t)=>t!==null) 
