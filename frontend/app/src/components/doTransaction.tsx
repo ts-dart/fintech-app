@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import Context from "../context/context";
+import '../styles/doTransactions.css';
 
 export default function Transactions() {
     const { update, setUpdate } = useContext(Context);
@@ -26,31 +27,35 @@ export default function Transactions() {
     };
 
     return(
-        <div>
-            <div>
-                <label htmlFor='inputUsername'>
-                    Digite o nome de usuario da pessoa que recebera a transferencia:
+        <>
+            <div id='transferBox'>
+                <p>Faça uma transferencia para um usuario passando o username</p>
+                <label htmlFor='inputUsername' id='inputLabel'>
+                    <strong>Username:</strong>
                     <input
                         type="text"
                         id='inputUsername'
+                        className='transferInput'
                         onChange={({ target: { value } })=>setUsername(value)}
                     />
                 </label>
-                <label htmlFor='inputValue'>
-                    Digite o valor que sera transferido:
+                <label htmlFor='inputValue' id='inputLabel'>
+                    <strong>Digite o valor que sera transferido:</strong>
                     <input
                         type="text"
                         id='inputValue'
+                        className='transferInput'
                         onChange={({ target: { value } })=>setValue(value)}
                     />
                 </label>
                 <input
                     type="button"
                     value='Realizar transferencia'
+                    id='transferBtn'
                     onClick={()=>transfer()}
                 />
             </div>
-            <p>{response}</p>
-        </div>
+            <p id='msg'>{response}</p>
+        </>
     );
 }

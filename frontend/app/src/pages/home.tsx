@@ -3,6 +3,7 @@ import Header from '../components/header';
 import Transactions from '../components/transactions';
 import DoTransactions from '../components/doTransaction';
 import { useNavigate } from 'react-router-dom';
+import '../styles/home.css'
 
 export default function Home() {
     const navigate = useNavigate();
@@ -33,12 +34,16 @@ export default function Home() {
     return (
         <>
             {
-                requisitionStatus
+                !requisitionStatus
                     ? (
+                        <><p>...</p>
+                        {redirectToLogin()}</>
+                    )
+                    : (
                         <>
                             <Header/>
                             <main>
-                                <div>
+                                <div id='sactions'>
                                     <input 
                                         type='button'
                                         value='Ver transações'
@@ -54,14 +59,13 @@ export default function Home() {
                                             setSeeTransactions(false)
                                         }}/>
                                 </div>
-                                <div>
-                                    {seeTransactions ? <Transactions/> : <DoTransactions/>}
-                                </div>    
+                                {seeTransactions ? <Transactions/> : <DoTransactions/>}
                             </main>
                         </>
                     )
-                    : redirectToLogin()
             }
         </>
     )
 }
+
+// redirectToLogin()

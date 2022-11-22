@@ -23,11 +23,12 @@ export default function RegisterForm() {
 
     const registredSuccess = () => {
         return(
-            <div>
-                <p>Usuário registrado com sucesso</p>
+            <div className='resDiv'>
+                <strong><p id='pMessage'>Usuário registrado com sucesso</p></strong>
                 <input
                     type='button'
                     value='Voltar e fazer login'
+                    id='button'
                     onClick={()=>navigate('/')}
                 />
             </div>
@@ -36,28 +37,43 @@ export default function RegisterForm() {
 
     return(
         <section>
-            <div>
-                <label htmlFor='inputUsername'>
-                    Nome de Usuario:
+            <div id='form' className='nameLabel'>
+                <label htmlFor='inputUsername' id='nameLabel'>
+                    <strong>Nome de Usuario:</strong>
                     <input
                         type='text'
                         id='inputUsername'
+                        className='inputLogin'
                         placeholder='ex:@th.cash'
                         onChange={({target: { value }})=>setUsername(value)}
                     />
                 </label>
-                <label htmlFor="inputPassword">
-                    Senha:
+                <label htmlFor="inputPassword" id='nameLabel'>
+                    <strong>Senha:</strong>
                     <input
                         type='password'
                         id='inputPassword'
+                        className='inputLogin'
                         onChange={({target: { value }})=>setPassword(value)}
-                        placeholder='senha'
+                        placeholder='min 8 chars, um numero, uma letra maiuscula'
                     />
                 </label>
-                <input type='button' value='Criar Conta' onClick={doRegister}/>
+                <div id='buttons'>
+                    <input type='button' value='Criar Conta' id='button' onClick={doRegister}/>
+                    <input type='button' value='Valtar para login' id='button' onClick={()=>navigate('/')}/>
+                </div>
+                {response==='Successfully registered user'?registredSuccess():''}
+                {response==='Username already registered'
+                    ?(<strong><p>Nome de usuario ja registrado</p></strong>)
+                    : ''}
+                {response.includes('"password" with value')
+                    ?(<strong>
+                        <p>
+                            senha não permitida, sua senha precisa ter o minimo de 8 caracteres, ao menos um numero e uma letra maiuscula
+                        </p>
+                    </strong>)
+                    : ''}
             </div>
-            {response==='Successfully registered user'?registredSuccess():''}
         </section>
     );
 }

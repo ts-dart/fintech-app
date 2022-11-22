@@ -1,0 +1,30 @@
+#tBox {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+#inputLabel {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.inputTransactions {
+    border: solid black 2px;
+    margin-bottom: 10px;
+}
+
+#btnFilter {
+    cursor: pointer;
+    border: black solid 2px;
+    margin-bottom: 5px;
+    background-color: white;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+#btnFilter:hover {
+    color: white;
+    background-color: black;
+}

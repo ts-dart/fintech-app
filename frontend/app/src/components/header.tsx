@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import Context from '../context/context';
 import { useNavigate } from 'react-router-dom';
+import '../styles/header.css'
 
 export default function Header() {
     const navigate = useNavigate();
@@ -18,17 +19,15 @@ export default function Header() {
 
     return(
         <header>
-            <div>
-                <p>Saldo: R${balance}</p>
-                <input
-                    type='button'
-                    value='sair'
-                    onClick={()=>{
-                        localStorage.setItem('token', '')
-                        return navigate('/');
-                    }}
-                />
-            </div>
+            <strong><p id='pBalance'>Saldo: R${balance}</p></strong>
+            <input
+                type='button'
+                value='Sair'
+                onClick={()=>{
+                    localStorage.setItem('token', '')
+                    return navigate('/');
+                }}
+            />
         </header>
     );
 }
