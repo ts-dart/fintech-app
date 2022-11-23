@@ -1,6 +1,4 @@
-#### 1 - Descompactar arquivo
-
-#### 2 - Iniciar banco de dados
+#### 1 - Iniciar banco de dados
 Abra o terminal na raiz do projeto e execute: "npm run db"
 
 esse comando cria um container docker que sera o banco de dados, e nessecario configurar o banco de dados
@@ -15,7 +13,7 @@ esse comando cria um container docker que sera o banco de dados, e nessecario co
 * passo 4 - ultimo passo, execute o seguinte codigo: "update mysql.user set host = '%' where user='root';
 ".
 
-#### 3 - Iniciar backend
+#### 2 - Iniciar backend
 Abra o terminal na raiz do projeto e execute: "npm run backend"
 
 #### 3 - Iniciar frontend
