@@ -9,7 +9,7 @@ export default function Header() {
     const [balance, setBalance] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/balance', {
+        fetch('http://localhost:3001/balance', {
             mode: 'cors',
             headers: {'authorization': `${localStorage.getItem('token')}`},
         })

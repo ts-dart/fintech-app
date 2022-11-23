@@ -2,8 +2,10 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
-    height: 200px;
+    height: 250px;
+    margin: 50px auto 0px;
     margin-top: 15px;
+    width: 50%;
 }
 
 #inputLabel {
@@ -17,6 +19,7 @@
     border-top: white;
     background-color: white;
     border-bottom: black solid 2px;
+    margin-bottom: 10px;
 }
 
 .transferInput:active {
@@ -38,7 +41,7 @@
 }
 
 p {
-    font-size: 19x;
+    font-size: 22px;
     font-weight: bold;
 }
 

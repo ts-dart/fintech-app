@@ -1,5 +1,5 @@
 FROM node:16
-WORKDIR /frontend
+WORKDIR /app-frontend
 COPY . .
 RUN npm install
 CMD ["npm", "start"]

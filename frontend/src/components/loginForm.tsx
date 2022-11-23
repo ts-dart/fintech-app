@@ -9,7 +9,7 @@ export default function LoginForm() {
     const [response, setResponse] = useState('');
 
     const doLogin = () => {
-        fetch('http://localhost:3000/login', {
+        fetch('http://localhost:3001/login', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -39,7 +39,7 @@ export default function LoginForm() {
                     id='inputUsername'
                     className='inputLogin'
                     onChange={({target: { value }})=>setUsername(value)}
-                    placeholder='username'
+                    placeholder='@username'
                 />
             </label>
             <label htmlFor="inputPassword" id='nameLabel'>

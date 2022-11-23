@@ -26,7 +26,7 @@ export default function Transactions() {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:3000/transactions?date=${date}&by=${type}`, {
+        fetch(`http://localhost:3001/transactions?date=${date}&by=${type}`, {
             mode: 'cors',
             headers: {'authorization': `${localStorage.getItem('token')}`},
         })
@@ -35,8 +35,8 @@ export default function Transactions() {
     }, [filtred]);
 
     return(
-        <div id='tBox'>
-            <div>
+        <div>
+            <div id='tFilters'>
                 <label htmlFor='selectType' id='inputLabel'>
                     Selecione o tipo de tansação:
                     <select
@@ -101,7 +101,7 @@ export default function Transactions() {
                         </table>
                     )
                     : (
-                        <div>
+                        <div id="msgP">
                             <p>Transação não encontrada</p>
                         </div>
                     )

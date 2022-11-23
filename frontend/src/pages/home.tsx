@@ -17,7 +17,7 @@ export default function Home() {
     }; 
 
     useEffect(() => {
-        fetch('http://localhost:3000/balance',
+        fetch('http://localhost:3001/balance',
         { 
             method: 'GET',
             mode: 'cors',

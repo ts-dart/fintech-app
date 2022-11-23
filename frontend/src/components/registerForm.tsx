@@ -8,7 +8,7 @@ export default function RegisterForm() {
     const [response, setResponse] = useState('');
 
     const doRegister = () => {
-        fetch('http://localhost:3000/register', {
+        fetch('http://localhost:3001/register', {
             method: 'POST',
             mode: 'cors',
             headers: {

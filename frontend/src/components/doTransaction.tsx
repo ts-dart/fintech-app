@@ -9,7 +9,7 @@ export default function Transactions() {
     const [response, setResponse] = useState('');
 
     const transfer = () => {
-        fetch(`http://localhost:3000/operation`, {
+        fetch(`http://localhost:3001/operation`, {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -55,7 +55,9 @@ export default function Transactions() {
                     onClick={()=>transfer()}
                 />
             </div>
-            <p id='msg'>{response}</p>
+            <div id="msgP">
+                <p>{response}</p>
+            </div>
         </>
     );
 }
