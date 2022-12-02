@@ -1,11 +1,11 @@
 # App ngcash
 Esse projeto foi desenvolvido para o processo seletivo da ngcash em parceria com a trybe. O desafio consiste em estruturar uma aplicação web fullstack, dockerizada, cujo objetivo seja possibilitar que usuários da NG consigam realizar transferências internas entre si.
 
+## Instruções para rodar localmente o app
 Faça download do repositorio:
 
-    git@github.com:ts-dart/app-ngcash.git
+    git clone git@github.com:ts-dart/app-ngcash.git
 
-## Instruções para rodar localmente o app
 #### 1 - Iniciar banco de dados
 Abra o terminal na raiz do projeto e execute: "npm run db"
 
