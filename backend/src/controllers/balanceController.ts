@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import RequestWithUser from '../interfaces/RequestWithUser';
+import RequestWithUser from '../types/RequestWithUser';
 import balanceService from '../services/balanceService';
 
 async function read(req:RequestWithUser, res:Response):Promise<Response> {

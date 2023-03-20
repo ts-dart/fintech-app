@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import bcrypt from 'bcrypt';
-import TyResponse from '../interfaces/TyResponse';
+import TyResponse from '../types/TyResponse';
 import users from '../model/database/models/users';
 import jwt from 'jsonwebtoken';
 

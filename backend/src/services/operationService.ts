@@ -1,8 +1,8 @@
 import accounts from '../model/database/models/accounts';
 import users from '../model/database/models/users';
 import transactions from '../model/database/models/transactions';
-import TyDataUser from '../interfaces/TyDataUser';
-import TyResponse from '../interfaces/TyResponse';
+import TyDataUser from '../types/TyDataUser';
+import TyResponse from '../types/TyResponse';
 
 async function create(dataUser:TyDataUser, username:string, val:any):Promise<TyResponse> {
     const value = parseFloat(val);

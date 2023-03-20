@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import RequestWithUser from '../interfaces/RequestWithUser';
+import RequestWithUser from '../types/RequestWithUser';
 import operationService from '../services/operationService';
 
 async function create(req:RequestWithUser, res:Response):Promise<Response> {

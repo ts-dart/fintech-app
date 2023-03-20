@@ -1,6 +1,6 @@
 import users from '../model/database/models/users';
 import accounts from '../model/database/models/accounts';
-import TyResponse from '../interfaces/TyResponse';
+import TyResponse from '../types/TyResponse';
 import bcrypt from 'bcrypt';
 
 async function create(username:string, password:string):Promise<TyResponse> {

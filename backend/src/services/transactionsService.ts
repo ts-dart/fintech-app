@@ -1,6 +1,6 @@
-import TyDataUser from '../interfaces/TyDataUser';
-import TyResponse from '../interfaces/TyResponse';
-import TyTransactions from '../interfaces/TyTransactions';
+import TyDataUser from '../types/TyDataUser';
+import TyResponse from '../types/TyResponse';
+import TyTransactions from '../types/TyTransactions';
 import transactions from '../model/database/models/transactions';
 
 async function read(data_user:TyDataUser, by:string, date:any):Promise<TyResponse> {

@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import jwt from 'jsonwebtoken';
 import { Response, NextFunction } from 'express';
-import RequestWithUser from '../interfaces/RequestWithUser';
+import RequestWithUser from '../types/RequestWithUser';
 
 export default async (req:RequestWithUser, res:Response, next:NextFunction) => {
   const token = req.headers.authorization;
