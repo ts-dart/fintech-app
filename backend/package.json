@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run db && npm run dev",
+    "start": "tsc && npm run db && npm run build",
+    "build": "node ./build/index.js",
     "dev": "tsnd ./src/index.ts",
     "db": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate"
   },
