@@ -1,0 +1,50 @@
+#transferBox {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    height: 250px;
+    margin: 50px auto 0px;
+    margin-top: 15px;
+    width: 50%;
+}
+
+#inputLabel {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.transferInput {
+    border-left: white;
+    border-right: white;
+    border-top: white;
+    background-color: white;
+    border-bottom: black solid 2px;
+    margin-bottom: 10px;
+}
+
+.transferInput:active {
+    border-bottom: black solid 1px;
+}
+
+#transferBtn {
+    cursor: pointer;
+    border: black solid 2px;
+    margin-bottom: 5px;
+    background-color: white;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+#transferBtn:hover {
+    color: white;
+    background-color: black;
+}
+
+p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#msg {
+    font-weight: bold;
+}
