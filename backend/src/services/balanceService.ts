@@ -1,4 +1,4 @@
-import accounts from '../model/database/models/accounts';
+import accounts  from '../model/database/models/accounts';
 import TyDataUser from '../types/TyDataUser';
 
 async function read(dataUser:TyDataUser) {

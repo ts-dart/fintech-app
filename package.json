@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "db": "(docker run -p 3306:3306 --name=db -d mysql/mysql-server)",
-    "backend": "(cd backend && npm install && npm start)",
-    "frontend": "(cd frontend && npm install && npm start)"
+    "backend": "(cd backend && npm install && npm start)"
   },
   "keywords": [],
   "author": "",
