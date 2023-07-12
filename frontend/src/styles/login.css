@@ -43,3 +43,7 @@
 .inputLogin:active {
     border-bottom: black solid 1px;
 }
+
+#h1-loading {
+    margin: 300px 560px;
+}

@@ -6,8 +6,10 @@ export default function RegisterForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [response, setResponse] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const doRegister = () => {
+        setLoading(true);
         fetch('https://app-cash-api-deploy.onrender.com/register', {
             method: 'POST',
             mode: 'cors',
@@ -18,7 +20,10 @@ export default function RegisterForm() {
             body: JSON.stringify({ username, password })
         })
         .then((data) => data.json())
-        .then((data) => setResponse(data.message));
+        .then((data) => {
+            setResponse(data.message)
+            setLoading(false);
+        });
     };
 
     const registredSuccess = () => {
@@ -36,44 +41,48 @@ export default function RegisterForm() {
     }
 
     return(
-        <section>
-            <div id='form' className='nameLabel'>
-                <label htmlFor='inputUsername' id='nameLabel'>
-                    <strong>Nome de Usuario:</strong>
-                    <input
-                        type='text'
-                        id='inputUsername'
-                        className='inputLogin'
-                        placeholder='ex:@th.cash'
-                        onChange={({target: { value }})=>setUsername(value)}
-                    />
-                </label>
-                <label htmlFor="inputPassword" id='nameLabel'>
-                    <strong>Senha:</strong>
-                    <input
-                        type='password'
-                        id='inputPassword'
-                        className='inputLogin'
-                        onChange={({target: { value }})=>setPassword(value)}
-                        placeholder='min 8 chars, um numero, uma letra maiuscula'
-                    />
-                </label>
-                <div id='buttons'>
-                    <input type='button' value='Criar Conta' id='button' onClick={doRegister}/>
-                    <input type='button' value='Valtar para login' id='button' onClick={()=>navigate('/')}/>
-                </div>
-                {response==='Successfully registered user'?registredSuccess():''}
-                {response==='Username already registered'
-                    ?(<strong><p>Nome de usuario ja registrado</p></strong>)
-                    : ''}
-                {response.includes('"password" with value')
-                    ?(<strong>
-                        <p>
-                            senha não permitida, sua senha precisa ter o minimo de 8 caracteres, ao menos um numero e uma letra maiuscula
-                        </p>
-                    </strong>)
-                    : ''}
-            </div>
-        </section>
+        <>
+            {loading ? <h1 id='h1-loading'>Carregando...</h1> : (
+                <section>
+                    <div id='form' className='nameLabel'>
+                        <label htmlFor='inputUsername' id='nameLabel'>
+                            <strong>Nome de Usuario:</strong>
+                            <input
+                                type='text'
+                                id='inputUsername'
+                                className='inputLogin'
+                                placeholder='ex:@th.cash'
+                                onChange={({target: { value }})=>setUsername(value)}
+                            />
+                        </label>
+                        <label htmlFor="inputPassword" id='nameLabel'>
+                            <strong>Senha:</strong>
+                            <input
+                                type='password'
+                                id='inputPassword'
+                                className='inputLogin'
+                                onChange={({target: { value }})=>setPassword(value)}
+                                placeholder='min 8 chars, um numero, uma letra maiuscula'
+                            />
+                        </label>
+                        <div id='buttons'>
+                            <input type='button' value='Criar Conta' id='button' onClick={doRegister}/>
+                            <input type='button' value='Valtar para login' id='button' onClick={()=>navigate('/')}/>
+                        </div>
+                        {response==='Successfully registered user'?registredSuccess():''}
+                        {response==='Username already registered'
+                            ?(<strong><p>Nome de usuario ja registrado</p></strong>)
+                            : ''}
+                        {response.includes('"password" with value')
+                            ?(<strong>
+                                <p>
+                                    senha não permitida, sua senha precisa ter o minimo de 8 caracteres, ao menos um numero e uma letra maiuscula
+                                </p>
+                            </strong>)
+                            : ''}
+                    </div>
+                </section>
+            )}
+        </>
     );
 }
