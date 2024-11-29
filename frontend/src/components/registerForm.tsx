@@ -42,6 +42,7 @@ export default function RegisterForm() {
 
     return(
         <>
+            {console.log(process.env.ACESS_IP_API)}
             {loading ? <h1 id='h1-loading'>Carregando...</h1> : (
                 <section>
                     <div id='form' className='nameLabel'>
