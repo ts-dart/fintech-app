@@ -9,7 +9,7 @@ export default function Transactions() {
     const [response, setResponse] = useState('');
 
     const transfer = () => {
-        fetch(`https://app-cash-api-deploy.onrender.com/operation`, {
+        fetch(`http://${process.env.ACESS_IP_API}:${process.env.API_PORT}/operation`, {
             method: 'POST',
             mode: 'cors',
             headers: {
