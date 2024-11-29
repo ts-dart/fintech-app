@@ -10,7 +10,7 @@ export default function RegisterForm() {
 
     const doRegister = () => {
         setLoading(true);
-        fetch('http://18.231.227.169:1881/register', {
+        fetch(`http://${process.env.ACESS_IP_API}:${process.env.API_PORT}/register`, {
             method: 'POST',
             mode: 'cors',
             headers: {
