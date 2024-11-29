@@ -9,7 +9,7 @@ export default function Header() {
     const [balance, setBalance] = useState('');
 
     useEffect(() => {
-        fetch('https://app-cash-api-deploy.onrender.com/balance', {
+        fetch(`http://${process.env.ACESS_IP_API}:${process.env.API_PORT}/balance`, {
             mode: 'cors',
             headers: {'authorization': `${localStorage.getItem('token')}`},
         })
