@@ -17,7 +17,7 @@ export default function Home() {
     }; 
 
     useEffect(() => {
-        fetch('http://18.231.227.169:1881/balance',
+        fetch(`http://${process.env.ACESS_IP_API}:${process.env.API_PORT}/balance`,
         { 
             method: 'GET',
             mode: 'cors',
