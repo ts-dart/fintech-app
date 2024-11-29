@@ -10,7 +10,7 @@ export default function RegisterForm() {
 
     const doRegister = () => {
         setLoading(true);
-        fetch('https://app-cash-api-deploy.onrender.com/register', {
+        fetch('http://18.231.227.169:1881/register', {
             method: 'POST',
             mode: 'cors',
             headers: {

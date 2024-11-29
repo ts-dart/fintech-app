@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && npm run db && npm run build",
-    "build": "node ./build/index.js",
+    "build": "pm2 start ./build/index.js --name=deploy-teste",
     "dev": "tsnd ./src/index.ts",
     "db": "npx sequelize-cli db:migrate"
   },
