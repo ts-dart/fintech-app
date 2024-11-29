@@ -4,8 +4,6 @@ import { Request, Response, NextFunction } from 'express';
 const createUserDto = Joi.object({
   username: Joi.string().min(3).required(),
   password: Joi.string()
-    .pattern(new RegExp('/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{6,}$/'))
-    .required(),
 });
 
 const createUserValid = (req:Request, res:Response, next:NextFunction) => {
