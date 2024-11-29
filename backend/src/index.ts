@@ -13,5 +13,5 @@ app.use('/balance', router.balanceRouter);
 app.use('/operation', router.operationRouter);
 app.use('/transactions', router.transactionsRouter);
 
-const PORT = !process.env.PORT ? 3001 : process.env.PORT;
-app.listen(PORT, () => console.log(`online na porta ${PORT}`));
+const API_PORT = !process.env.API_PORT ? 3001 : process.env.API_PORT;
+app.listen(API_PORT, () => console.log(`online na porta ${API_PORT}`));
