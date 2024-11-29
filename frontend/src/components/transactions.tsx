@@ -26,7 +26,7 @@ export default function Transactions() {
     };
 
     useEffect(() => {
-        fetch(`https://app-cash-api-deploy.onrender.com/transactions?date=${date}&by=${type}`, {
+        fetch(`http://${process.env.ACESS_IP_API}:${process.env.API_PORT}/transactions?date=${date}&by=${type}`, {
             mode: 'cors',
             headers: {'authorization': `${localStorage.getItem('token')}`},
         })
